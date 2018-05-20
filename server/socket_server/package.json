@@ -1,0 +1,23 @@
+{
+  "name": "socket_server",
+  "version": "1.0.0",
+  "description": "socket server for 24/seven",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gebob19/24-seven.git"
+  },
+  "author": "Brennan Gebotys & Filip Telescu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gebob19/24-seven/issues"
+  },
+  "homepage": "https://github.com/gebob19/24-seven#readme",
+  "dependencies": {
+    "socket.io": "2.1.1"
+  }
+}
