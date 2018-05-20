@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
 from rest_framework import routers
+from .routes.auth import login
 
 # connect to mongodb
 from mongoengine import connect
@@ -26,4 +28,5 @@ router = routers.DefaultRouter()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^login', login)
 ]
