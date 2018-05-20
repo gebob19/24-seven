@@ -1,2 +1,13 @@
-from rest_framework_mongoengine import Serializers
-from . import models
+from rest_framework_mongoengine import serializers
+from .models import User
+
+
+class UserSerializer(serializers.DocumentSerializer):
+    class Meta:
+        model = User
+        fields = (
+            'firstName',
+            'lastName',
+            'email',
+            'friends'
+            )

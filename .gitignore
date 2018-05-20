@@ -1,5 +1,5 @@
 .vscode/
-
+.DS_STORE
 # Node
 # Logs
 logs

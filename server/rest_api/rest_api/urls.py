@@ -17,9 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 from rest_framework import routers
-from .routes.auth import login
+from .routes.auth import login, register
 
-# connect to mongodb
+# MongoDB connection
 from mongoengine import connect
 connect('24-seven')
 
@@ -28,5 +28,8 @@ router = routers.DefaultRouter()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^login', login)
+    url(r'^login', login),
+
+    #dev urls
+    url(r'^register', register)
 ]
