@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2664F6B420B2FF7F004609DB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2664F6B320B2FF7F004609DB /* LoginController.swift */; };
+		4BCD10E3E0F8584A9456AD73 /* Pods_7.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B68E727EDAEDEE701D9117 /* Pods_7.framework */; };
 		CE295E7220B0BCE30045C28C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE295E7120B0BCE30045C28C /* AppDelegate.swift */; };
 		CE295E7420B0BCE30045C28C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE295E7320B0BCE30045C28C /* ViewController.swift */; };
 		CE295E7720B0BCE30045C28C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE295E7520B0BCE30045C28C /* Main.storyboard */; };
@@ -18,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2664F6B320B2FF7F004609DB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		2BB0038C2DF837D254200B22 /* Pods-7.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-7.release.xcconfig"; path = "Pods/Target Support Files/Pods-7/Pods-7.release.xcconfig"; sourceTree = "<group>"; };
+		68250B07037458EEEEFE4F19 /* Pods-7.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-7.debug.xcconfig"; path = "Pods/Target Support Files/Pods-7/Pods-7.debug.xcconfig"; sourceTree = "<group>"; };
 		CE295E6E20B0BCE30045C28C /* 7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE295E7120B0BCE30045C28C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE295E7320B0BCE30045C28C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +33,7 @@
 		CE295E8020B0BCE40045C28C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE295E8620B0C2E80045C28C /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		CE295E8820B0D0630045C28C /* ImgRounder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgRounder.swift; sourceTree = "<group>"; };
+		E0B68E727EDAEDEE701D9117 /* Pods_7.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_7.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BCD10E3E0F8584A9456AD73 /* Pods_7.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28509D7A3C4746C7072C7BBC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68250B07037458EEEEFE4F19 /* Pods-7.debug.xcconfig */,
+				2BB0038C2DF837D254200B22 /* Pods-7.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4F60C4EBC374EACCEE78D431 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0B68E727EDAEDEE701D9117 /* Pods_7.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE295E6520B0BCE30045C28C = {
 			isa = PBXGroup;
 			children = (
 				CE295E7020B0BCE30045C28C /* 7 */,
 				CE295E6F20B0BCE30045C28C /* Products */,
+				28509D7A3C4746C7072C7BBC /* Pods */,
+				4F60C4EBC374EACCEE78D431 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +95,7 @@
 				CE295E8020B0BCE40045C28C /* Info.plist */,
 				CE295E7820B0BCE30045C28C /* _.xcdatamodeld */,
 				CE295E8820B0D0630045C28C /* ImgRounder.swift */,
+				2664F6B320B2FF7F004609DB /* LoginController.swift */,
 			);
 			path = 7;
 			sourceTree = "<group>";
@@ -80,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE295E8320B0BCE40045C28C /* Build configuration list for PBXNativeTarget "7" */;
 			buildPhases = (
+				58836EF4A49826FA5FD40049 /* [CP] Check Pods Manifest.lock */,
 				CE295E6A20B0BCE30045C28C /* Sources */,
 				CE295E6B20B0BCE30045C28C /* Frameworks */,
 				CE295E6C20B0BCE30045C28C /* Resources */,
+				9F2D0C98ACEB5DD137505452 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,12 +168,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		58836EF4A49826FA5FD40049 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-7-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F2D0C98ACEB5DD137505452 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-7/Pods-7-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-7/Pods-7-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE295E6A20B0BCE30045C28C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CE295E7420B0BCE30045C28C /* ViewController.swift in Sources */,
+				2664F6B420B2FF7F004609DB /* LoginController.swift in Sources */,
 				CE295E8720B0C2E80045C28C /* LoginTextField.swift in Sources */,
 				CE295E7A20B0BCE30045C28C /* _.xcdatamodeld in Sources */,
 				CE295E7220B0BCE30045C28C /* AppDelegate.swift in Sources */,
@@ -290,15 +359,13 @@
 		};
 		CE295E8420B0BCE40045C28C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68250B07037458EEEEFE4F19 /* Pods-7.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = 7/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.24seven.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -308,15 +375,13 @@
 		};
 		CE295E8520B0BCE40045C28C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BB0038C2DF837D254200B22 /* Pods-7.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = 7/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.24seven.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

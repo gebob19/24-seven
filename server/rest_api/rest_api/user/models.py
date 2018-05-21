@@ -17,3 +17,10 @@ class User(Document):
 
     def clean(self):
         self.password = pbkdf2_sha256.hash(self.password)
+
+    def toPayload(self):
+        return {
+            'email': self.email,
+            'friends': self.friends,
+            'status': self.status,
+        }

@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="-42.399999999999999" y="107.49625187406298"/>
         </scene>
-        <!--View Controller-->
+        <!--Login Controller-->
         <scene sceneID="dKn-zN-tSo">
             <objects>
-                <viewController id="TGP-xE-EkG" sceneMemberID="viewController">
+                <viewController id="TGP-xE-EkG" customClass="LoginController" customModule="_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iIm-PQ-lAa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,7 +130,7 @@
                                     <fragment content="Type in your Email ID and Password you chose for 24seven to login!">
                                         <attributes>
                                             <color key="NSColor" red="0.29021999999999998" green="0.29017999999999999" blue="0.29024" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="12" name="OpenSans"/>
+                                            <font key="NSFont" metaFont="cellTitle"/>
                                             <real key="NSKern" value="0.0"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="19.199999999999999" maximumLineHeight="19.199999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
@@ -182,7 +182,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="W28-EE-1G3" kind="show" id="NbS-bd-hBJ"/>
+                                    <action selector="login:" destination="TGP-xE-EkG" eventType="touchUpInside" id="hu2-wp-aG0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -201,6 +201,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qYz-k3-Vyv"/>
                     </view>
+                    <connections>
+                        <outlet property="emailInput" destination="aek-re-S8t" id="a3k-Q8-aeh"/>
+                        <outlet property="errorOutput" destination="QWn-XQ-a4W" id="4Ig-dC-Y0I"/>
+                        <outlet property="passwordInput" destination="gv3-Kq-FDr" id="6vP-RA-bhl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VJ-Ug-EqC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -366,7 +371,7 @@
                                     <fragment content="Fill in the required details and click Proceed.">
                                         <attributes>
                                             <color key="NSColor" red="0.29021999999999998" green="0.29017999999999999" blue="0.29024" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="12" name="OpenSans"/>
+                                            <font key="NSFont" metaFont="cellTitle"/>
                                             <real key="NSKern" value="0.0"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="19.199999999999999" maximumLineHeight="19.199999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
@@ -427,7 +432,7 @@
                                     <fragment content="By Creating Account, you are automatically accepting all the ">
                                         <attributes>
                                             <color key="NSColor" red="0.29021999999999998" green="0.29017999999999999" blue="0.29024" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="12" name="OpenSans"/>
+                                            <font key="NSFont" metaFont="cellTitle"/>
                                             <real key="NSKern" value="0.0"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="19.199999999999999" maximumLineHeight="19.199999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
@@ -435,7 +440,7 @@
                                     <fragment content="Terms &amp; Conditions">
                                         <attributes>
                                             <color key="NSColor" red="1" green="0.38430999999999998" blue="0.39607999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="12" name="OpenSans"/>
+                                            <font key="NSFont" metaFont="cellTitle"/>
                                             <real key="NSKern" value="0.0"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="19.199999999999999" maximumLineHeight="19.199999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             <integer key="NSUnderline" value="1"/>
@@ -445,7 +450,7 @@
                                     <fragment content=" related to 24seven">
                                         <attributes>
                                             <color key="NSColor" red="0.29021999999999998" green="0.29017999999999999" blue="0.29024" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="12" name="OpenSans"/>
+                                            <font key="NSFont" metaFont="cellTitle"/>
                                             <real key="NSKern" value="0.0"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="19.199999999999999" maximumLineHeight="19.199999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             <color key="NSUnderlineColor" red="1" green="0.38430999999999998" blue="0.39607999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -465,7 +470,7 @@
                                     <fragment content="OR sign in with Facebook">
                                         <attributes>
                                             <color key="NSColor" red="0.43136999999999998" green="0.43136999999999998" blue="0.43136999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="OpenSans-Semibold"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
                                             <real key="NSKern" value="0.0"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
@@ -538,7 +543,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="SQw-hk-duq">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="W28-EE-1G3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="explore" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W28-EE-1G3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="4Sp-Ng-iQw">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -571,7 +576,6 @@
         <image name="users-48px-outline_multiple-19" width="22" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NbS-bd-hBJ"/>
         <segue reference="F4Y-Ts-I2X"/>
     </inferredMetricsTieBreakers>
 </document>

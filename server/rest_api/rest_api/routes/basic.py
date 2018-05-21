@@ -13,7 +13,9 @@ def login(request):
         try:
             user = User.objects.get(email=email)
             if (pbkdf2_sha256.verify(password, user.password)):
-                resp = jwt.encode({'message': 'hello world'}, 'secret', algorithm='HS256')
+                payload = user.toPayload()
+                token = jwt.encode(payload, 'secret', algorithm='HS256')
+                resp = {'token': token}
             else:
                  resp = {'err': 'Invalid email/password'}
         except:
