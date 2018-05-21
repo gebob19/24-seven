@@ -4,4 +4,5 @@
 #### First Time
 `chmod 755 server/start.sh`
 #### Start server
-`server/start.sh`
+`cd server/`
+`./start.sh`
