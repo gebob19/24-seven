@@ -9,5 +9,6 @@ class UserSerializer(serializers.DocumentSerializer):
             'firstName',
             'lastName',
             'email',
-            'friends'
+            'status',
+            'friends',
             )

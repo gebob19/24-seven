@@ -1,4 +1,5 @@
 from mongoengine import Document, fields
+from passlib.hash import pbkdf2_sha256
 
 
 class User(Document):
@@ -14,5 +15,5 @@ class User(Document):
     # list of document IDs
     friends = fields.ListField(fields.StringField(), default=[])
 
-    # def clean(self):
-        # self.password = pbkdf2_sha256.hash(self.password)
+    def clean(self):
+        self.password = pbkdf2_sha256.hash(self.password)
