@@ -13,6 +13,7 @@ def login(request):
         try:
             user = User.objects.get(email=email)
             if (pbkdf2_sha256.verify(password, user.password)):
+                # create and give token
                 payload = user.toPayload()
                 token = jwt.encode(payload, 'secret', algorithm='HS256')
                 resp = {'token': token}
@@ -29,13 +30,18 @@ def register(request):
     requestDict = request.data
     if (validUserDetails(requestDict)):
         try:
-            User(
+            # save user
+            user = User(
                 firstName=requestDict['firstName'],
                 lastName=requestDict['lastName'],
                 email=requestDict['email'],
                 password=requestDict['password'],
             ).save()
-            resp = {'message': 'success'}
+            
+            # create and give token
+            payload = user.toPayload()
+            token = jwt.encode(payload, 'secret', algorithm='HS256')
+            resp = {'token': token}
         except:
             resp = {'err': 'email is already registered'}
     else:

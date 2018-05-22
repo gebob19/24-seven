@@ -1,7 +1,6 @@
 from mongoengine import Document, fields
 from passlib.hash import pbkdf2_sha256
 
-
 class User(Document):
     firstName = fields.StringField(required=True)
     lastName = fields.StringField(required=True)
@@ -20,7 +19,13 @@ class User(Document):
 
     def toPayload(self):
         return {
-            'email': self.email,
-            'friends': self.friends,
+            'id': str(self.id),
+        }
+    
+    def toQuickView(self):
+        return {
+            'firstName': self.firstName,
+            'lastName': self.lastName,
             'status': self.status,
+            'id': str(self.id)
         }
