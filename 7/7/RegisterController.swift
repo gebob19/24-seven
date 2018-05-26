@@ -30,7 +30,10 @@ class RegisterController: UIViewController {
     @IBAction func register(_ sender: Any) {
         if (passwordInput.text == passwordConfirmInput.text) {
             let params: Parameters = ["email": (string: emailInput.text),
-                                      "password": (string: passwordInput.text)]
+                                      "password": (string: passwordInput.text),
+                                      "firstName": (string: "Gebobby"),
+                                      "lastName": (string: "Bobby")]
+            
             Alamofire.request("http://localhost:8000/register", method: .post, parameters: params,
                               encoding: JSONEncoding.default).responseJSON { response in
                 if let status = response.response?.statusCode {
