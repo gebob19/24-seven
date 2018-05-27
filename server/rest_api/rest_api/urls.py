@@ -19,10 +19,11 @@ from django.conf.urls import url, include
 from rest_framework import routers
 from .routes.basic import login, register
 from .user.views import UserViewSet
+from .routes.friend_actions import send_friend_request, accept_friend_request
 
 # MongoDB connection
 from mongoengine import connect
-connect('24-seven')
+connect('24-seven-test')
 
 # set routes
 router = routers.DefaultRouter()
@@ -32,6 +33,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^login', login),
     url(r'^register', register),
+    url(r'^friend_actions/send_friend_request', send_friend_request),
+    url(r'^friend_actions/accept_friend_request', accept_friend_request)
 ]
 
 urlpatterns += router.urls

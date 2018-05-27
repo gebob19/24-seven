@@ -13,6 +13,8 @@ class User(Document):
 
     # list of document IDs
     friends = fields.ListField(fields.StringField(), default=[])
+    myFriendRequests = fields.ListField(fields.StringField(), default=[])
+    sentFriendRequests = fields.ListField(fields.StringField(), default=[])
 
     def clean(self):
         self.password = pbkdf2_sha256.hash(self.password)
