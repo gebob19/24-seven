@@ -41,10 +41,14 @@ def accept_friend_request(request):
         except:
             return Response({'err': 'invalid token'})
         
-        if (recipientUserID in user.friendRequests):
-            user.friendRequests.remove(recipientUserID)
+        if (recipientUserID in user.myFriendRequests):
             user.friends.append(recipientUserID)
             recipient.friends.append(payload['id'])
+
+            user.myFriendRequests.remove(recipientUserID)
+            recipient.sentFriendRequests.remove(payload['id'])
+            
+            recipient.save()
             user.save()
 
         resp = {'message': 'success'}

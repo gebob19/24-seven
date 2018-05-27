@@ -34,13 +34,69 @@ def populate_users():
             email='kenny123@gmail.com',
             password='password123'
         ).save()
+
+        harold = User(
+            firstName='harold',
+            lastName='yutago',
+            email='haroldinho@hotmail.com',
+            password='password123'
+        ).save()
+
     except:
         return False
     return True    
 
+def populate_friends():
+    try:
+        users = User.objects
+        for i in range(0, len(users) - 1):
+            currentUser = users[i]
+            if i == len(users) - 1:
+                sendRequestTo = users[0]
+            else:
+                sendRequestTo = users[i+1]
+            print(currentUser.firstName + ' -> ' + sendRequestTo.firstName)
+            # friend request sent
+            currentUser.sentFriendRequests.append(str(sendRequestTo.id))
+            sendRequestTo.myFriendRequests.append(str(currentUser.id))
+            currentUser.save(clean=False)
+            sendRequestTo.save(clean=False)
+    except:
+        return False
+    return True
+
+def accept_requests():
+    users = User.objects
+    for i in range(0, len(users) - 1):
+        currentUser = users[i]
+        requestCount = 0
+        print(currentUser.myFriendRequests)
+        for request in currentUser.myFriendRequests:
+            if requestCount % 2 == 0:
+                friendRequester = User.objects.get(id=request)
+
+                friendRequester.sentFriendRequests.remove(str(currentUser.id))
+                currentUser.myFriendRequests.remove(str(friendRequester.id))
+
+                friendRequester.friends.append(str(currentUser.id))
+                currentUser.friends.append(str(friendRequester.id))
+
+                currentUser.save(clean=False)
+                friendRequester.save(clean=False)
+            requestCount += 1
+    return True
+
+
+
+        
+def attempt(title, function):
+    print(title)
+    print("Success.") if function() else print("Fail.")
+
 if __name__ == "__main__":
-    print("Populating Users...")
-    print("Success.") if populate_users() else print("Fail.")
+    attempt("Populating Users...", populate_users)
+    attempt("Populating Friends...", populate_friends)
+    attempt("Accepting Friend Requests...", accept_requests)
 
     # print('dropping database...')
     # db.drop_database(dbName)
