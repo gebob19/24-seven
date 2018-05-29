@@ -1,5 +1,6 @@
 from mongoengine import Document, fields
 from passlib.hash import pbkdf2_sha256
+from ..controllers.friendController import FriendController
 
 class User(Document):
     firstName = fields.StringField(required=True)
@@ -31,3 +32,18 @@ class User(Document):
             'status': self.status,
             'id': str(self.id)
         }
+    
+    def canSendFriendRequest(self, recipient):
+        alreadyFriends = str(self.id) in recipient.friends
+        requestAlreadySent = str(self.id) in recipient.myFriendRequests
+
+        return not alreadyFriends and not requestAlreadySent
+    
+    def canAcceptFriendRequest(self, recipient):
+        return str(self.id) in recipient.sentFriendRequests
+
+    def getFriendController(self):
+        return FriendController(self)
+
+
+        

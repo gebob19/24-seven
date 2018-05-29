@@ -86,17 +86,22 @@ def accept_requests():
             requestCount += 1
     return True
 
-
-
+def drop():
+    print('dropping database...')
+    try:
+        db.drop_database(dbName)
+        print("Success.")
+    except:
+        print("Fail.")
         
 def attempt(title, function):
     print(title)
     print("Success.") if function() else print("Fail.")
 
 if __name__ == "__main__":
-    attempt("Populating Users...", populate_users)
-    attempt("Populating Friends...", populate_friends)
-    attempt("Accepting Friend Requests...", accept_requests)
-
-    # print('dropping database...')
-    # db.drop_database(dbName)
+    if (len(sys.argv) > 1 and sys.argv[1] == 'drop'):
+        drop()
+    else:
+        attempt("Populating Users...", populate_users)
+        attempt("Populating Friends...", populate_friends)
+        attempt("Accepting Friend Requests...", accept_requests)

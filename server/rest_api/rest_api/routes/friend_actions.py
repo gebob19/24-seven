@@ -6,52 +6,55 @@ import jwt
 
 @api_view(['POST'])
 def send_friend_request(request):
-    requestDict = request.data
-    if ('token' in requestDict and 'recipientUserID' in requestDict):
-        token = requestDict['token']
-        recipientUserID = requestDict['recipientUserID']
-        try:
-            payload = jwt.decode(token, 'secret', algorithms=['HS256'])
-            user = User.objects.get(id=payload['id'])
-            recipient = User.objects.get(id=recipientUserID)
-        except:
-            return Response({'err': 'invalid token'})
+    validation = validRequest(request)
+    if (validation[0]):
+        user = validation[1]
+        recipient = validation[2]
 
-
-        if (not recipientUserID in user.friends and 
-            not recipientUserID in user.friendRequests):
-            recipient.friendRequests.append(recipientUserID)
-            user.save()
-
-        resp = {'message': 'success'}
+        if (user.canSendFriendRequest(recipient)):
+            user.getFriendController().sendFriendRequest(recipient)
+            resp = {'message': 'success'}
+        else:
+            resp = {'message': 'unable to send friend request'}
     else:
-        resp = {'err': 'missing required parameters in request'}
+        resp = {'err': validation[1]}
     return Response(resp)
 
 @api_view(['POST'])
 def accept_friend_request(request):
+    validation = validRequest(request)
+    if (validation[0]):
+        user = validation[1]
+        requester = validation[2]
+
+        if (user.canAcceptFriendRequest(requester)):
+            user.getFriendController().acceptFriendRequest(requester)
+            resp = {'message': 'success'}
+        else:
+            resp = {'err': 'unable to accept friend request'}
+    else:
+        resp = {'err': validation[1]}
+
+    return Response(resp)
+
+def validRequest(request):
     requestDict = request.data
-    if ('token' in requestDict and 'recipientUserID' in requestDict):
+    if ('token' in requestDict and 'recipientID' in requestDict):
         token = requestDict['token']
-        recipientUserID = requestDict['recipientUserID']
+        recipientID = requestDict['recipientID']
         try:
             payload = jwt.decode(token, 'secret', algorithms=['HS256'])
-            user = User.objects.get(id=payload['id'])
-            recipient = User.objects.get(id=recipientUserID)
         except:
-            return Response({'err': 'invalid token'})
+            return [False, 'unable to decode token']
+        try:
+            print(payload['id'], recipientID)
+            user = User.objects.get(id=payload['id'])
+            recipient = User.objects.get(id=recipientID)
+        except:
+            return [False, 'invalid parameters']
         
-        if (recipientUserID in user.myFriendRequests):
-            user.friends.append(recipientUserID)
-            recipient.friends.append(payload['id'])
-
-            user.myFriendRequests.remove(recipientUserID)
-            recipient.sentFriendRequests.remove(payload['id'])
-            
-            recipient.save()
-            user.save()
-
-        resp = {'message': 'success'}
+        resp = [True, user, recipient]
     else:
-        resp = {'err': 'missing required parameters in request'}
-    return Response(resp)
+        resp = [False, 'missing parameters']
+    return resp
+        
