@@ -1,6 +1,6 @@
 from mongoengine import Document, fields
 from passlib.hash import pbkdf2_sha256
-#from ..controllers.friendController import FriendController
+from ..controllers.friendController import FriendController
 
 class User(Document):
     firstName = fields.StringField(required=True)
