@@ -21,7 +21,7 @@ def populate_users():
         ).save()
 
         fred = User(
-            firstName='freddy',
+            firstName='freddy', 
             lastName='kennedy',
             email='fredmyster@gmail.com',
             password='password123'
