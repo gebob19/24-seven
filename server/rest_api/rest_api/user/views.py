@@ -14,12 +14,10 @@ class UserViewSet(ModelViewSet):
         validation = isValidRequest(request)
         if (validation[0]):
             payload = validation[1]
+            
             friends = User.objects.get(id=payload['id']).friends
-
             queryset = User.objects(id__in=friends)
-            resp = []
-            for user in queryset:
-                resp.append(user.toQuickView())
+            resp = getResponse(queryset)
         else:
             resp = {'err': validation[1]}
         
