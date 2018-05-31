@@ -8,14 +8,21 @@
 
 import UIKit
 import Alamofire
+import SocketIO
 
 class FriendsViewController: UIViewController {
 
     var token:String = ""
+    var socket:SocketIOClient!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // connect socket
+        var manager = SocketManager(socketURL: URL(string: "http://127.0.0.1:8080")!, config: [.log(true), .connectParams(["token": token])])
+        self.socket = manager.defaultSocket
+        self.setSocketEvents()
+        self.socket.connect()
+        // get user's friends from server
         let params: Parameters = ["token": token]
         
         Alamofire.request("http://127.0.0.1:8000/user/friends/", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
@@ -30,6 +37,12 @@ class FriendsViewController: UIViewController {
                 }
             }
             print(response)
+        }
+    }
+    
+    private func setSocketEvents() {
+        self.socket.on(clientEvent: .connect) { data, ack in
+            print("Socket Connected!")
         }
     }
 
