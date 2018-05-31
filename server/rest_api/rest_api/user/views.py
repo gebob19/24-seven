@@ -28,12 +28,10 @@ class UserViewSet(ModelViewSet):
         validation = isValidRequest(request)
         if (validation[0]):
             payload = validation[1]
-            myFriendRequests = User.objects.get(id=payload['id']).myFriendRequests
 
+            myFriendRequests = User.objects.get(id=payload['id']).myFriendRequests
             queryset = User.objects(id__in=myFriendRequests)
-            resp = []
-            for user in queryset:
-                resp.append(user.toQuickView())
+            resp = getResponse(queryset)
         else:
             resp = {'err': validation[1]}
         
@@ -45,12 +43,10 @@ class UserViewSet(ModelViewSet):
         validation = isValidRequest(request)
         if (validation[0]):
             payload = validation[1]
+            
             sentFriendRequests = User.objects.get(id=payload['id']).sentFriendRequests
-
             queryset = User.objects(id__in=sentFriendRequests)
-            resp = []
-            for user in queryset:
-                resp.append(user.toQuickView())
+            resp = getResponse(queryset)
         else:
             resp = {'err': validation[1]}
         
@@ -70,4 +66,10 @@ def isValidRequest(request):
     else:
         resp = [False, 'missing parameters']
     
+    return resp
+
+def getResponse(list):
+    resp = []
+    for user in list:
+        resp.append(user.toQuickView())
     return resp

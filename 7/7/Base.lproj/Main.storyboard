@@ -287,7 +287,7 @@
         <!--Friends-->
         <scene sceneID="hhN-Mp-4IQ">
             <objects>
-                <viewController id="vCl-04-hWz" customClass="ViewController" customModule="_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="friends" id="vCl-04-hWz" customClass="FriendsViewController" customModule="_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="niT-n9-rtq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -309,7 +309,7 @@
                                                     <fragment content="Friends">
                                                         <attributes>
                                                             <color key="NSColor" red="0.29021999999999998" green="0.29017999999999999" blue="0.29024" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="16" name="OpenSans-Semibold"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                         </attributes>
@@ -526,7 +526,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="SQw-hk-duq">
             <objects>
-                <tabBarController storyboardIdentifier="explore" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W28-EE-1G3" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="W28-EE-1G3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="4Sp-Ng-iQw">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -559,6 +559,6 @@
         <image name="users-48px-outline_multiple-19" width="22" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="F4Y-Ts-I2X"/>
+        <segue reference="0UI-2i-4pa"/>
     </inferredMetricsTieBreakers>
 </document>

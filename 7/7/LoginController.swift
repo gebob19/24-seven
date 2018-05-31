@@ -49,7 +49,8 @@ class LoginController: UIViewController {
                     self.errorOutput.text = err as! String
                 } else if let token = respJSON["token"] {
                     // pass token to this vc
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "explore") as! UITabBarController
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "friends") as! FriendsViewController
+                    vc.token = token as! String
                     self.present(vc, animated: true, completion: nil)
                 }
             }

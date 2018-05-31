@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2664F6B420B2FF7F004609DB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2664F6B320B2FF7F004609DB /* LoginController.swift */; };
+		266EE95D20BA1F8700855090 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266EE95C20BA1F8700855090 /* FriendsViewController.swift */; };
 		26A2310720B3400D00768190 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2310620B3400D00768190 /* RegisterController.swift */; };
 		4BCD10E3E0F8584A9456AD73 /* Pods_7.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B68E727EDAEDEE701D9117 /* Pods_7.framework */; };
 		CE295E7220B0BCE30045C28C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE295E7120B0BCE30045C28C /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		2664F6B320B2FF7F004609DB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		266EE95C20BA1F8700855090 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		26A2310620B3400D00768190 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		2BB0038C2DF837D254200B22 /* Pods-7.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-7.release.xcconfig"; path = "Pods/Target Support Files/Pods-7/Pods-7.release.xcconfig"; sourceTree = "<group>"; };
 		68250B07037458EEEEFE4F19 /* Pods-7.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-7.debug.xcconfig"; path = "Pods/Target Support Files/Pods-7/Pods-7.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				CE295E8820B0D0630045C28C /* ImgRounder.swift */,
 				2664F6B320B2FF7F004609DB /* LoginController.swift */,
 				26A2310620B3400D00768190 /* RegisterController.swift */,
+				266EE95C20BA1F8700855090 /* FriendsViewController.swift */,
 			);
 			path = 7;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				266EE95D20BA1F8700855090 /* FriendsViewController.swift in Sources */,
 				CE295E7420B0BCE30045C28C /* ViewController.swift in Sources */,
 				2664F6B420B2FF7F004609DB /* LoginController.swift in Sources */,
 				CE295E8720B0C2E80045C28C /* LoginTextField.swift in Sources */,
