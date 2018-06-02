@@ -4,7 +4,8 @@
 #### First Time
 `chmod 755 server/start.sh`
 #### Start server
-`cd server/`</br>
+start the database: `mongod`</br>
+In a new tab start the server: `cd server/`</br>
 `./start.sh`
 #### Start App
 `cd 7` </br>
