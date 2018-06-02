@@ -12,6 +12,31 @@ import SocketIO
 
 class FriendsViewController: UIViewController {
 
+    
+  
+    
+    
+    @IBOutlet var lbl: UILabel!
+    
+    
+    @IBOutlet var seg: UISegmentedControl!
+    
+    
+    @IBAction func ValueChanged(_ sender: Any) {
+        if seg.selectedSegmentIndex == 0 //first
+        {
+            lbl.text = "First is selected"
+        }
+        else if seg.selectedSegmentIndex == 1 //second
+        {
+            lbl.text = "Second is selected"
+        }
+        else if seg.selectedSegmentIndex == 2 //third
+        {
+            lbl.text = "Third is selected"
+        }
+    }
+    
     var token:String = ""
     var socket:SocketIOClient!
     

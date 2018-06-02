@@ -302,11 +302,11 @@
                                     <segment title="Favorites"/>
                                 </segments>
                                 <connections>
-                                    <action selector="ValueChanged:" destination="vCl-04-hWz" eventType="valueChanged" id="jpH-QE-WOi"/>
+                                    <action selector="ValueChanged:" destination="vCl-04-hWz" eventType="valueChanged" id="etj-gR-chl"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tq8-xK-8xy">
-                                <rect key="frame" x="178" y="143" width="19" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCd-GY-lbt">
+                                <rect key="frame" x="166" y="147" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -317,8 +317,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Friends" image="location-48px-outline_explore" selectedImage="location-48px-outline_explore" id="eH6-GO-dw3"/>
                     <connections>
-                        <outlet property="allLbl" destination="Tq8-xK-8xy" id="p50-XK-Mlj"/>
-                        <outlet property="seg" destination="Qyx-pD-ADR" id="rgq-6x-Jbf"/>
+                        <outlet property="lbl" destination="HCd-GY-lbt" id="tzl-PO-he2"/>
+                        <outlet property="seg" destination="Qyx-pD-ADR" id="RUT-Va-sxT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPO-US-IoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

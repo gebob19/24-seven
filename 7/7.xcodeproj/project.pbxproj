@@ -19,7 +19,6 @@
 		CE295E7F20B0BCE40045C28C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE295E7D20B0BCE40045C28C /* LaunchScreen.storyboard */; };
 		CE295E8720B0C2E80045C28C /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE295E8620B0C2E80045C28C /* LoginTextField.swift */; };
 		CE295E8920B0D0630045C28C /* ImgRounder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE295E8820B0D0630045C28C /* ImgRounder.swift */; };
-		CE7544D920C2F4D2009651F5 /* SegView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7544D820C2F4D2009651F5 /* SegView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +37,6 @@
 		CE295E8020B0BCE40045C28C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE295E8620B0C2E80045C28C /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		CE295E8820B0D0630045C28C /* ImgRounder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgRounder.swift; sourceTree = "<group>"; };
-		CE7544D820C2F4D2009651F5 /* SegView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegView.swift; sourceTree = "<group>"; };
 		E0B68E727EDAEDEE701D9117 /* Pods_7.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_7.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,7 +94,6 @@
 				CE295E7320B0BCE30045C28C /* ViewController.swift */,
 				CE295E8620B0C2E80045C28C /* LoginTextField.swift */,
 				CE295E7520B0BCE30045C28C /* Main.storyboard */,
-				CE7544D820C2F4D2009651F5 /* SegView.swift */,
 				CE295E7B20B0BCE40045C28C /* Assets.xcassets */,
 				CE295E7D20B0BCE40045C28C /* LaunchScreen.storyboard */,
 				CE295E8020B0BCE40045C28C /* Info.plist */,
@@ -225,7 +222,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE7544D920C2F4D2009651F5 /* SegView.swift in Sources */,
 				266EE95D20BA1F8700855090 /* FriendsViewController.swift in Sources */,
 				CE295E7420B0BCE30045C28C /* ViewController.swift in Sources */,
 				2664F6B420B2FF7F004609DB /* LoginController.swift in Sources */,
