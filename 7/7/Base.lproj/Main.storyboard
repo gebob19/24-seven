@@ -96,7 +96,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Create account" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iXz-J2-Ekl">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Sign in" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iXz-J2-Ekl">
                                 <rect key="frame" x="125" y="37" width="124" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -183,6 +183,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="login:" destination="TGP-xE-EkG" eventType="touchUpInside" id="hu2-wp-aG0"/>
+                                    <segue destination="W28-EE-1G3" kind="show" id="NiC-Hu-3qQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -289,77 +290,40 @@
             <objects>
                 <viewController storyboardIdentifier="friends" id="vCl-04-hWz" customClass="FriendsViewController" customModule="_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="niT-n9-rtq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oly-3X-wNB">
-                                <rect key="frame" x="0.0" y="20" width="375" height="731"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2z-N9-0PI">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
-                                        <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D1f-8F-O7r">
-                                                <rect key="frame" x="156" y="37" width="63.5" height="35.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="63.5" id="Q33-Lp-4FG"/>
-                                                    <constraint firstAttribute="height" constant="35.5" id="h7p-nw-8pO"/>
-                                                </constraints>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Friends">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.29021999999999998" green="0.29017999999999999" blue="0.29024" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="16"/>
-                                                            <real key="NSKern" value="0.0"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="70L-iE-0P0">
-                                                <rect key="frame" x="88" y="80" width="199" height="29"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <segments>
-                                                    <segment title="All"/>
-                                                    <segment title="Free"/>
-                                                    <segment title="Favorites"/>
-                                                </segments>
-                                                <color key="tintColor" red="0.46274509800000002" green="0.91764705879999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </segmentedControl>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="D1f-8F-O7r" firstAttribute="centerX" secondItem="L2z-N9-0PI" secondAttribute="centerX" id="8br-zG-IHN"/>
-                                            <constraint firstItem="D1f-8F-O7r" firstAttribute="centerY" secondItem="L2z-N9-0PI" secondAttribute="centerY" constant="-345.25" id="KpC-4S-diF"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="0.46274509800000002" green="0.91764705879999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="L2z-N9-0PI" firstAttribute="top" secondItem="Oly-3X-wNB" secondAttribute="top" id="FZo-3b-VfV"/>
-                                    <constraint firstAttribute="bottom" secondItem="L2z-N9-0PI" secondAttribute="bottom" id="JEL-M7-Ucd"/>
-                                    <constraint firstAttribute="trailing" secondItem="L2z-N9-0PI" secondAttribute="trailing" id="KIv-B4-DCh"/>
-                                    <constraint firstItem="L2z-N9-0PI" firstAttribute="leading" secondItem="Oly-3X-wNB" secondAttribute="leading" id="xZU-Mf-QTd"/>
-                                </constraints>
-                            </scrollView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qyx-pD-ADR">
+                                <rect key="frame" x="94" y="47" width="187" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Free"/>
+                                    <segment title="Favorites"/>
+                                </segments>
+                                <connections>
+                                    <action selector="ValueChanged:" destination="vCl-04-hWz" eventType="valueChanged" id="jpH-QE-WOi"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tq8-xK-8xy">
+                                <rect key="frame" x="178" y="143" width="19" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="Oly-3X-wNB" firstAttribute="top" secondItem="QW5-G7-X0R" secondAttribute="top" id="CC4-vk-zre"/>
-                            <constraint firstAttribute="trailing" secondItem="Oly-3X-wNB" secondAttribute="trailing" id="LIr-AT-it6"/>
-                            <constraint firstItem="L2z-N9-0PI" firstAttribute="width" secondItem="niT-n9-rtq" secondAttribute="width" id="Lma-eh-FYR"/>
-                            <constraint firstItem="Oly-3X-wNB" firstAttribute="bottom" secondItem="QW5-G7-X0R" secondAttribute="bottom" id="NeM-Hp-VC2"/>
-                            <constraint firstItem="Oly-3X-wNB" firstAttribute="leading" secondItem="niT-n9-rtq" secondAttribute="leading" id="Ydc-gh-oxl"/>
-                            <constraint firstItem="L2z-N9-0PI" firstAttribute="height" secondItem="niT-n9-rtq" secondAttribute="height" id="dBC-dh-ejw"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QW5-G7-X0R"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Friends" image="location-48px-outline_explore" selectedImage="location-48px-outline_explore" id="eH6-GO-dw3"/>
-                    <size key="freeformSize" width="375" height="800"/>
+                    <connections>
+                        <outlet property="allLbl" destination="Tq8-xK-8xy" id="p50-XK-Mlj"/>
+                        <outlet property="seg" destination="Qyx-pD-ADR" id="rgq-6x-Jbf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPO-US-IoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2476" y="1715.4422788605698"/>
+            <point key="canvasLocation" x="2476" y="1714.9925037481262"/>
         </scene>
         <!--Register Controller-->
         <scene sceneID="ucG-V6-Zgy">
@@ -456,6 +420,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="register:" destination="9YL-FX-5s7" eventType="touchUpInside" id="dlc-8I-WOI"/>
+                                    <segue destination="W28-EE-1G3" kind="show" id="axW-qE-Z36"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqk-Y0-Gas">
@@ -559,6 +524,7 @@
         <image name="users-48px-outline_multiple-19" width="22" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0UI-2i-4pa"/>
+        <segue reference="NiC-Hu-3qQ"/>
+        <segue reference="F4Y-Ts-I2X"/>
     </inferredMetricsTieBreakers>
 </document>
