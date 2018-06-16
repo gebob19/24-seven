@@ -1,5 +1,7 @@
 # 24-seven
 
+hangout app, which allows you to quicky and easily hangout with your friends
+
 ## Developer Mode
 #### First Time
 `chmod 755 server/start.sh`
